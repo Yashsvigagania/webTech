@@ -228,17 +228,17 @@ Purpose:
 Handle Future error using try/catch. 
 Constraints: - Must use try/catch. 
 =========================================================== */ 
-Future<void> errorHandling() async { 
-  try{
-    return Future.delayed(Duration(seconds:1),(){
-      throw Exception("Error");
-      });
-  }
-  catch(e){
-    print(e);
-  }
+// Future<void> errorHandling() async { 
+//   try{
+//     return Future.delayed(Duration(seconds:1),(){
+//       throw Exception("Error");
+//       });
+//   }
+//   catch(e){
+//     print(e);
+//   }
 
-} 
+// } 
 /* =========================================================== 
 COMBINATION QUESTIONS 
 =========================================================== */ 
@@ -324,18 +324,23 @@ Encapsulation example using private variable.
 Constraints: - Declare private variable inside class or function. 
 =========================================================== */ 
 int encapsulationExample() { 
-// STUDENT CODE STARTS HERE 
-// STUDENT CODE ENDS HERE 
+  int _privateValue=10;
+  return _privateValue; 
 } 
 /* =========================================================== 
 23 
 Purpose: 
 Nested loop printing pattern. 
 =========================================================== */ 
-void nestedLoop(int n) { 
-// STUDENT CODE STARTS HERE 
-} 
-// STUDENT CODE ENDS HERE 
+void nestedLoop(int n) {
+  for(int i=0;i<n;i++){
+    String row=" ";
+    for(int j=1;j<i+1;j++){
+      row+="*";
+    }
+    print(row);
+  }
+}  
 /* =========================================================== 
 24 
 Purpose: 
@@ -369,9 +374,14 @@ Purpose:
 Filter list greater than 20 using loop. 
 =========================================================== */ 
 List<int> filterGreaterThan20(List<int> list) { 
-// STUDENT CODE STARTS HERE 
+  List<int> result=[];
+  for(int i in list){
+    if(i>20){
+      result.add(i);
+    }
+  }
+  return result;
 } 
-// STUDENT CODE ENDS HERE 
 /* =========================================================== 
 28 
 Purpose: 
@@ -379,8 +389,17 @@ Switch calculator.
 Parameters: - a (int) - b (int) - operator (String) 
 =========================================================== */ 
 dynamic calculator(int a, int b, String operator) { 
-// STUDENT CODE STARTS HERE 
-// STUDENT CODE ENDS HERE 
+  switch(operator){
+    case "+": return a+b;
+    case "-": return a-b;
+    case "*": return a*b;
+    case "/" : 
+    if(b==0){
+      print("Error");
+    }
+    return a/b;
+    default: return "Invalid opearator";
+  }
 } 
 /* =========================================================== 
 29 
@@ -388,15 +407,102 @@ Purpose:
 Polymorphism test. 
 =========================================================== */ 
 String polymorphismTest() { 
-// STUDENT CODE STARTS HERE 
-// STUDENT CODE ENDS HERE 
+  Person p=Student("Yashsvi",288,"B.Tech");
+  return p.getRole();
 } 
 /* =========================================================== 
 30 
 Purpose: 
 Display Full integration (OOP + async + loop). 
 =========================================================== */ 
-Future<void> integrationTest() async { 
-// STUDENT CODE STARTS HERE 
-// STUDENT CODE ENDS HERE 
+Future<void> integrationTest() async {
+  Student s = Student("Aarav", 101, "B.Tech");
+  print(s.getRole());
+
+  for (int n in numbers) {
+    print(n);
+  }
+
+  String msg = await fetchData("Integration Complete");
+  print(msg); 
 } 
+void main() async {
+
+  print("1 Add: ${add(5,5)}");
+
+  print("2 Is Even: ${isEven(4)}");
+
+  print("3 Max: ${findMax(10,20)}");
+
+  print("4 Factorial: ${factorial(5)}");
+
+  print("5 Count Elements: ${countElements(numbers)}");
+
+  print("6 Reverse List: ${reverseList(numbers)}");
+
+  print("7 Sum List: ${sumList(numbers)}");
+
+  Student s = createStudent(studentData);
+  print("8 Student Created: ${s.name}, ${s.id}, ${s.course}");
+
+  print("9 Display Role: ${displayRole(s)}");
+
+  print("10 Logger Test:");
+  useLogger("Hello Logger");
+
+  print("11 Scope Example: ${scopeExample()}");
+
+  print("12 Grade: ${grade(90)}");
+
+  print("13 Fetch Data:");
+  String data = await fetchData("Data Loaded");
+  print(data);
+
+  print("14 Consume Future:");
+  await consumeFuture(fetchData("Future Result"));
+
+  // print("15 Error Handling:");
+  // await errorHandling();
+
+  print("16 Count Even: ${countEven(numbers)}");
+
+  print("17 Student Role Test: ${studentRoleTest()}");
+
+  print("18 Mixin Test:");
+  mixinTest();
+
+  print("19 Future Chain:");
+  print(await futureChain("Message"));
+
+  print("20 Async Loop:");
+  await asyncLoop();
+
+  print("21 Sum While: ${sumWhile(5)}");
+
+  print("22 Encapsulation Example: ${encapsulationExample()}");
+
+  print("23 Nested Loop Pattern:");
+  nestedLoop(5);
+
+  print("24 Create Person:");
+  Person p = createPerson("Rahul");
+  print(p.name);
+
+  print("25 Delayed Message:");
+  print(await delayedMessage());
+
+  print("26 Async Sum:");
+  print(await asyncSum(10,20));
+
+  print("27 Filter > 20:");
+  print(filterGreaterThan20(numbers));
+
+  print("28 Calculator:");
+  print(calculator(10,5,"+"));
+
+  print("29 Polymorphism Test:");
+  print(polymorphismTest());
+
+  print("30 Integration Test:");
+  await integrationTest();
+}
