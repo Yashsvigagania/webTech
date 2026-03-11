@@ -228,17 +228,17 @@ Purpose:
 Handle Future error using try/catch. 
 Constraints: - Must use try/catch. 
 =========================================================== */ 
-// Future<void> errorHandling() async { 
-//   try{
-//     return Future.delayed(Duration(seconds:1),(){
-//       throw Exception("Error");
-//       });
-//   }
-//   catch(e){
-//     print(e);
-//   }
+Future<void> errorHandling() async { 
+  try{
+    return Future.delayed(Duration(seconds:1),(){
+      throw Exception("Error");
+      });
+  }
+  catch(e){
+    print(e);
+  }
 
-// } 
+} 
 /* =========================================================== 
 COMBINATION QUESTIONS 
 =========================================================== */ 
@@ -461,8 +461,8 @@ void main() async {
   print("14 Consume Future:");
   await consumeFuture(fetchData("Future Result"));
 
-  // print("15 Error Handling:");
-  // await errorHandling();
+  print("15 Error Handling:");
+  await errorHandling();
 
   print("16 Count Even: ${countEven(numbers)}");
 
