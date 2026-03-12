@@ -199,12 +199,10 @@ Understand var scope.
 Expected Output: 
 50 
 ======================================================= */ 
-function trickyVarScope() { 
-// STUDENT CODE STARTS 
+function trickyVarScope() {  
 var x = 10; 
 if (true) { var x = 50; } 
-return x; 
-// STUDENT CODE ENDS 
+return x;  
 } 
 /* ======================================================= 
 19 
@@ -213,12 +211,10 @@ Understand let block scope.
 Expected Output: 
 10 
 ======================================================= */ 
-function trickyLetScope() { 
-// STUDENT CODE STARTS 
+function trickyLetScope() {  
 let x = 10; 
 if (true) { let x = 50; } 
 return x; 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 20 
@@ -227,8 +223,7 @@ Understand arrow vs normal function this.
 Expected Output: 
 "CS208 & undefined" 
 ======================================================= */ 
-function trickyArrowThis() { 
-// STUDENT CODE STARTS 
+function trickyArrowThis() {  
 const obj = { 
 name: "CS208", 
 normal: function () { return this.name; }, 
@@ -236,7 +231,6 @@ arrow: () => this.name
 }; 
 return obj.normal() + " & " + obj.arrow(); 
 } 
-// STUDENT CODE ENDS 
 /* ======================================================= 
 21 
 Purpose: 
@@ -244,11 +238,9 @@ Destructuring + rest combination.
 Return length of remaining elements. 
 ======================================================= */ 
 function trickyDestructure(arr) { 
-// STUDENT CODE STARTS 
 const [a,b,...rest] = arr; 
 return rest.length; 
-// STUDENT CODE ENDS 
-} 
+}
 /* ======================================================= 
 22 
 Purpose: 
@@ -257,22 +249,18 @@ Expected Output:
 30 
 ======================================================= */ 
 function trickySpreadOverride() { 
-// STUDENT CODE STARTS 
 const o1={age:21}; 
 const o2={age:30}; 
-return {...o1,...o2}.age; 
-// STUDENT CODE ENDS 
+return {...o1,...o2}.age;  
 } 
 /* ======================================================= 
 23 
 Purpose: 
 Rest + Spread together. 
 ======================================================= */ 
-function trickyRestSpread() { 
-// STUDENT CODE STARTS 
+function trickyRestSpread() {  
 const nums=[1,2,3]; 
 return sumRest(...nums); 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 24 
@@ -281,12 +269,10 @@ Promise error flow understanding.
 Expected Output: 
 "Recovered" 
 ======================================================= */ 
-function trickyPromiseFlow() { 
-// STUDENT CODE STARTS 
+function trickyPromiseFlow() {  
 return new Promise(res=>res("Start")) 
 .then(r=>{throw "Error"}) 
 .catch(e=>"Recovered"); 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 25 
@@ -296,20 +282,16 @@ Expected Output:
 undefined 
 ======================================================= */ 
 function trickyArrowReturn() { 
-// STUDENT CODE STARTS 
 const fn = () => { name:"Aman" }; 
 return fn(); 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 26 
 Purpose: 
 Map + filter chaining. 
 ======================================================= */ 
-function trickyMapFilter(arr) { 
-// STUDENT CODE STARTS 
+function trickyMapFilter(arr) {  
 return arr.filter(n=>n>10).map(n=>n*2); 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 27 
@@ -318,12 +300,10 @@ Clone object modification concept.
 Expected Output: 
 21 
 ======================================================= */ 
-function trickyCloneModify(obj) { 
-// STUDENT CODE STARTS 
+function trickyCloneModify(obj) {  
 const clone = {...obj}; 
 clone.age = 30; 
-return obj.age; 
-// STUDENT CODE ENDS 
+return obj.age;  
 } 
 /* ======================================================= 
 28 
@@ -331,10 +311,8 @@ Purpose:
 Default destructuring value. 
 ======================================================= */ 
 function trickyDefaultDestructure(obj) { 
-// STUDENT CODE STARTS 
 const {city="Noida"} = obj; 
 return city; 
-// STUDENT CODE ENDS 
 } 
 /* ======================================================= 
 29 
@@ -342,9 +320,7 @@ Purpose:
 Reduce without initial value. 
 ======================================================= */ 
 function trickyReduce(arr) { 
-// STUDENT CODE STARTS 
-return arr.reduce((a,b)=>a+b); 
-// STUDENT CODE ENDS 
+return arr.reduce((a,b)=>a+b);  
 } 
 /* ======================================================= 
 30 
@@ -353,12 +329,10 @@ typeof with var and let.
 Expected Output: 
 "number-number" 
 ======================================================= */ 
-function trickyTypeof() { 
-// STUDENT CODE STARTS 
+function trickyTypeof() {  
 var a = 1; 
 let b = 2; 
 return typeof a + "-" + typeof b; 
-// STUDENT CODE ENDS 
 } 
 function main() {
   console.log("---- DRIVER START ----");
