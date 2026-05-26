@@ -33,6 +33,7 @@ function createSuccessPromise(message){
     });
     
 }
+
 function createConditionalPromise(condition){
     return new Promise((resolve,reject)=>{
         if(condition){
@@ -43,12 +44,14 @@ function createConditionalPromise(condition){
         }
     });
 }
+
 function handlePromise(promise){
     promise
     .then((result)=> console.log(result))
     .catch((error)=> console.log(error));
 
 }
+
 function driver(){
     console.log("---- ES6 ASSIGNMENT DRIVER START ----");
     console.log("Sum:", sumNumbers(1, 2, 3));
