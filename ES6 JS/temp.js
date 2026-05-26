@@ -4,27 +4,34 @@ const extraInfo = { city: "Delhi", college: "KIET" };
 function sumNumbers(...nums){
     return nums.reduce((sum,num)=>sum+num,0);
 }
+
 function mergeArrays(arr1, arr2){
     return {...arr1,...arr2};
 }
+
 function updateObject(obj, newKey, newValue){
     return{...obj,[newKey]:newValue};
 }
+
 function findMax(arr){
     return Math.max(...arr);
 }
+
 function extractElements(arr){
     var first=arr;
     var last=arr.length>1 ? arr[arr.length-1]:first;
     return {first,last};
 }
+
 function formatStudent(obj){
     const {name,course}= obj;
     return `Student ${name} enrolled in ${course}`;
 }
+
 function addDefault(a = 5, b = 10){
     return a+b;
 }
+
 function createSuccessPromise(message){
     return new Promise((resolve)=>{
         setTimeout(()=>{
