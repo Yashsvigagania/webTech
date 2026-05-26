@@ -5,6 +5,7 @@ Map<String, dynamic> studentData = {
   "id": 101,
   "course": "B.Tech"
 };
+
 class Person {
   String name;
 
@@ -14,6 +15,7 @@ class Person {
     return "Person";
   }
 }
+
 class Student extends Person {
   int id;
   String course;
@@ -54,6 +56,7 @@ dynamic calculate(int a, int b, String operator) {
     return "Ivalid operator";
   }
 }
+
 List<String> addTask(List<String> list, String task) {
   list.add(task);
   return list;
@@ -63,6 +66,7 @@ List<String> removeTask(List<String> list, String task) {
   list.remove(task);
   return list;
 }
+
 void viewTasks(List<String> list) {
   for(var task in list){
     print(task);
